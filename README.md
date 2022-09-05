@@ -23,7 +23,7 @@ My profile readme is a self-updating bash-markdown polyglot using the [literate 
 
 # Information and statistics
 
-Readme build time Mon Sep  5 11:49:09 PM UTC 2022
+Readme build time Mon Sep  5 11:49:18 PM UTC 2022
 
 Monero Node: Offline
 
@@ -34,7 +34,6 @@ Monero Node: Offline
 --- /updatereadme.sh
 
     @{setbuildtime}
-    echo "done with build time"
     @{loadXMRStatus}
 
 ---
@@ -63,7 +62,7 @@ Below we check if my node is online, and we update the entry in the statistics s
         sed -i "0,/Monero Node: Offline/{s/Monero Node: Offline/Monero Node: Offline/}" README.md
     else
         echo "Node offline"
-        sed -i "0,/Monero Node: Online/{s/Monero Node: Online/Monero Node: Offline/}" README.md
+        sed -i "0,/Monero Node: Offline/{s/Monero Node: Online/Monero Node: Offline/}" README.md
     fi
 
 ---
