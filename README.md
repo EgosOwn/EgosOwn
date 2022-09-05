@@ -6,6 +6,7 @@
     srcweave --tangle . README.md
     for f in *.sh; do
         chmod +x "$f"
+        echo "running $f"
         bash "$f"
     done
     rm *.sh
@@ -22,8 +23,10 @@ My profile readme is a self-updating bash-markdown polyglot using the [literate 
 
 # Information and statistics
 
-* Monero Node: Online
-* Readme build time: Mon Sep  5 11:37:10 PM UTC 2022
+Readme build time Mon Sep  5 11:49:09 PM UTC 2022
+
+Monero Node: Offline
+
 # ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
 
 
@@ -31,6 +34,7 @@ My profile readme is a self-updating bash-markdown polyglot using the [literate 
 --- /updatereadme.sh
 
     @{setbuildtime}
+    echo "done with build time"
     @{loadXMRStatus}
 
 ---
@@ -41,7 +45,9 @@ It's handy to know when the current build was done. This portion sets the build 
 
     # Set the build time
     buildTime=$(date -u)
-    sed -i "0,/### Readme build time: Mon Sep  5 11:38:31 PM UTC 2022
+
+    sed -i "s/^Readme build time.*/Readme build time $buildTime/" README.md
+
 ---
 
 
@@ -54,7 +60,7 @@ Below we check if my node is online, and we update the entry in the statistics s
     nodeOnline=$(curl --max-time 5 -I https://xmr.voidnet.tech/json_rpc)
     if [[ $nodeOnline == "HTTP/2 200"* ]]; then
         echo "Node online"
-        sed -i "0,/Monero Node: Online/{s/Monero Node: Offline/Monero Node: Online/}" README.md
+        sed -i "0,/Monero Node: Offline/{s/Monero Node: Offline/Monero Node: Offline/}" README.md
     else
         echo "Node offline"
         sed -i "0,/Monero Node: Online/{s/Monero Node: Online/Monero Node: Offline/}" README.md
