@@ -2,6 +2,7 @@
 
 # ![Kevin Froman](kevin.svg)
 # ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
+### Readme build time:
 
 
     # Perform literate tangling then run all the scripts
@@ -28,7 +29,7 @@ Information and statistics, fetched by the code snippets below:
 
 I run a [Monero](https://getmonero.org/) node with open RPC and TLS for anyone to use. I believe Monero is an imperfect solution for 'electronic cash', but it is the best that is available today.
 
-The Monero node script checks if the node rpc endpoint is responding and changes the status in this file accordingly.
+This Monero node script checks if the node rpc endpoint is responding and changes the status in this file accordingly.
 
 --- /xmr.sh
 
@@ -40,5 +41,11 @@ The Monero node script checks if the node rpc endpoint is responding and changes
         echo "Node offline"
         sed -i "0,/Monero Node: Online/{s/Monero Node: Online/Monero Node: Offline/}" README.md
     fi
-
 ---
+
+--- setbuildtime.sh
+
+    #!/bin/bash
+    # Set the build time
+    buildTime=$(date)
+    sed -i "0,/Readme build time:/{s/Readme build time:.*/Readme build time: $buildTime/}" README.md
