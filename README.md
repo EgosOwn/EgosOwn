@@ -1,7 +1,6 @@
     #!/bin/bash
 
 # ![Kevin Froman](kevin.svg)
-# ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
 ### Readme build time:
 
 
@@ -23,30 +22,28 @@ I am a freelance software engineer and open source full-stack developer most pro
 
 My profile readme is a self-updating bash-markdown polyglot using the [literate programming](https://en.wikipedia.org/wiki/Literate_programming) tool [srcweave](https://github.com/justinmeiners/srcweave).
 
-Information and statistics, fetched by the code snippets below:
+---
+# Information and statistics
 
 * Monero Node: Online
+# ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
+---
 
 I run a [Monero](https://getmonero.org/) node with open RPC and TLS for anyone to use. I believe Monero is an imperfect solution for 'electronic cash', but it is the best that is available today.
 
-This Monero node script checks if the node rpc endpoint is responding and changes the status in this file accordingly.
+Below we check if my node is online, and we update the entry in the statistics section.
 
---- /xmr.sh
 
-    nodeOnline=$(curl --max-time 5 -I https://xmr.voidnet.tech/json_rpc)
-    if [[ $nodeOnline == "HTTP/2 200"* ]]; then
-        echo "Node online"
-        sed -i "0,/Monero Node: Online/{s/Monero Node: Offline/Monero Node: Online/}" README.md
-    else
-        echo "Node offline"
-        sed -i "0,/Monero Node: Online/{s/Monero Node: Online/Monero Node: Offline/}" README.md
-    fi
+
+
+--- /updatereadme.sh
+
+
 ---
 
---- setbuildtime.sh
+--- /setbuildtime.sh
 
-    #!/bin/bash
     # Set the build time
     buildTime=$(date)
-    sed -i "0,/### Readme build time:/{s/### Readme build time:.*/### Readme build time: $buildTime/" README.md
+    sed -i "0,/### Readme build time:/{s/### Readme build time:.*/### Readme build time: $buildTime/}" README.md
 ---
