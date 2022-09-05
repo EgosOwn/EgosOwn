@@ -49,3 +49,4 @@ This Monero node script checks if the node rpc endpoint is responding and change
     # Set the build time
     buildTime=$(date)
     sed -i "0,/Readme build time:/{s/Readme build time:.*/Readme build time: $buildTime/}" README.md
+---
