@@ -1,4 +1,4 @@
-#!/bin/bash
+    #!/bin/bash
 
 # Kevin Froman 🧑‍💻
 # ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
