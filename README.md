@@ -23,9 +23,9 @@ My profile readme is a self-updating bash-markdown polyglot using the [literate 
 
 # Information and statistics
 
-Readme build time Mon Sep  5 11:51:33 PM UTC 2022
+Readme build time Mon Sep  5 11:51:46 PM UTC 2022
 
-Monero Node: Online
+Monero Node: Offline
 
 # ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
 
@@ -59,7 +59,7 @@ Below we check if my node is online, and we update the entry in the statistics s
     nodeOnline=$(curl --max-time 5 -I https://xmr.voidnet.tech/json_rpc)
     if [[ $nodeOnline == "HTTP/2 200"* ]]; then
         echo "Node online"
-        sed -i "0,/Monero Node: Offline/{s/Monero Node: Offline/Monero Node: Online/}" README.md
+        sed -i "0,/Monero Node: Offline/{s/Monero Node: Offline/Monero Node: Offline/}" README.md
     else
         echo "Node offline"
         sed -i "0,/Monero Node: Offline/{s/Monero Node: Online/Monero Node: Offline/}" README.md
