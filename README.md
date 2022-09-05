@@ -11,7 +11,7 @@
     rm *.sh
     git add README.md
     git commit -m "Automatic update"
-    #git push origin master
+    git push origin master
     # Past the exit we can have invalid bash code
     exit 0
 
@@ -23,7 +23,7 @@ My profile readme is a self-updating bash-markdown polyglot using the [literate 
 # Information and statistics
 
 * Monero Node: Online
-### Readme build time: Mon Sep  5 11:35:19 PM UTC 2022
+### Readme build time: Mon Sep  5 11:35:29 PM UTC 2022
 # ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
 
 
