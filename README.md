@@ -23,14 +23,8 @@ My profile readme is a self-updating bash-markdown polyglot using the [literate 
 # Information and statistics
 
 * Monero Node: Online
-### Readme build time: Mon Sep  5 11:37:10 PM UTC 2022
+* Readme build time: Mon Sep  5 11:37:10 PM UTC 2022
 # ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
-
-
-I run a [Monero](https://getmonero.org/) node with open RPC and TLS for anyone to use. I believe Monero is an imperfect solution for 'electronic cash', but it is the best that is available today.
-
-Below we check if my node is online, and we update the entry in the statistics section.
-
 
 
 
@@ -41,15 +35,19 @@ Below we check if my node is online, and we update the entry in the statistics s
 
 ---
 
-It's handy to know when the current build was done. This sets the [above build time](#readme-build-time).
+It's handy to know when the current build was done. This portion sets the build time in the statistics section.
 
 --- setbuildtime
 
     # Set the build time
     buildTime=$(date -u)
-    sed -i "0,/### Readme build time:/{s/### Readme build time:.*/### Readme build time: $buildTime/}" README.md
+    sed -i "0,/### Readme build time: Mon Sep  5 11:38:31 PM UTC 2022
 ---
 
+
+I run a [Monero](https://getmonero.org/) node with open RPC and TLS for anyone to use. I believe Monero is an imperfect solution for 'electronic cash', but it is the best that is available today.
+
+Below we check if my node is online, and we update the entry in the statistics section.
 
 --- loadXMRStatus
 
