@@ -6,7 +6,6 @@
     srcweave --tangle . README.md
     for f in *.sh; do
         chmod +x "$f"
-        echo "running $f"
         bash "$f"
     done
     rm *.sh
@@ -23,7 +22,7 @@ My profile readme is a self-updating bash-markdown polyglot using the [literate 
 
 # Information and statistics
 
-Readme build time Mon Sep  5 11:52:59 PM UTC 2022
+Readme build time Tue Sep  6 12:07:49 AM UTC 2022
 
 Monero Node: Online
 
