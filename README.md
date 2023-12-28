@@ -20,11 +20,14 @@ I am a freelance software engineer and open source full-stack developer most pro
 
 My profile readme is a self-updating bash-markdown polyglot using the [literate programming](https://en.wikipedia.org/wiki/Literate_programming) tool [srcweave](https://github.com/justinmeiners/srcweave). In plain english, that means you can run this document as a bash script.
 
+
+
 # Information and statistics
 
-Readme build time Tue Sep  6 04:07:50 PM UTC 2022
+Readme build time Thu Dec 28 02:49:54 AM UTC 2023
 
-Monero Node: Online
+
+git.voidnet.tech status: Online
 
 # ![Commit stats](https://github-readme-stats.vercel.app/api?username=egosown&hide=stars,prs,issues,contribs&show_icons=true&hide_rank=true&hide_title=true)
 
@@ -33,7 +36,7 @@ Monero Node: Online
 --- /updatereadme.sh
 
     @{setbuildtime}
-    @{loadXMRStatus}
+    @{loadGitStatus}
 
 ---
 
@@ -49,19 +52,19 @@ It's handy to know when the current build was done. This portion sets the build 
 ---
 
 
-I run a [Monero](https://getmonero.org/) node with open RPC and TLS for anyone to use. I believe Monero is an imperfect solution for 'electronic cash', but it is the best that is available today.
+My gitea instance is where I do much of my programming: [git.voidnet.tech](https://git.voidnet.tech)
 
-Below we check if my node is online, and we update the entry in the statistics section.
+Below we check if my site is online, and we update the entry in the statistics section.
 
---- loadXMRStatus
+--- loadGitStatus
 
-    nodeOnline=$(curl --max-time 5 -I https://xmr.voidnet.tech/json_rpc)
-    if [[ $nodeOnline == "HTTP/2 200"* ]]; then
-        echo "Node online"
-        sed -i "0,/Monero Node: Offline/{s/^Monero Node: Offline/Monero Node: Online/}" README.md
+    gitOnline=$(curl --max-time 6 -I https://git.voidnet.tech/explore/repos)
+    if [[ $gitOnline == "HTTP/2 200"* ]]; then
+        echo "Gitea online"
+        sed -i "0,/git.voidnet.tech status Offline/{s/^git.voidnet.tech status Offline/git.voidnet.tech status Online/}" README.md
     else
         echo "Node offline"
-        sed -i "0,/Monero Node: Offline/{s/^Monero Node: Online/Monero Node: Offline/}" README.md
+        sed -i "0,/git.voidnet.tech status Offline/{s/^git.voidnet.tech status Online/git.voidnet.tech status Offline/}" README.md
     fi
 
 ---
